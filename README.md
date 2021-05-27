@@ -1,7 +1,7 @@
 # Joint Analysis of Sound Events and Acoustic Scenes Based on Multitask Learning
 Sound event detection (SED) and acoustic scene classification (ASC) are major research tasks in environmental sound analysis. Conventional methods have addressed these tasks separately; however, acoustic events and scenes are closely related to each other. For example, in the acoustic scene "office," the sound events "mouse clicking" and "keyboard typing" tend to occur. This repository provides the implementation for joint analysis of sound events and acoustic scenes, which have been applied in [1][2].
 
-See also [meta files](https://github.com/KeisukeImoto/metadata_SEDandASC01) used for [1][2].
+See also [this repository](https://github.com/KeisukeImoto/metadata_SEDandASC01).
 
 
 ##
