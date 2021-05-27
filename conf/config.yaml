@@ -1,0 +1,37 @@
+setting:
+  mode: 'test' # train/test/eval/evaluation
+  gpuid: '0' # GPU ID
+  nepoch: 300 # number of epochs
+  FIXSEED: True
+  seed: 000 # seed for randam value
+  thresmode: 'fixed' # 'fixed' or 'adaptive', or 'auc'
+  threshold: 0.50 #detection threshold
+  startthres: 0.3 # start value for threshold search (used only in adaptive thresholding)
+  endthres: 0.7 # end value for threshold search (used only in adaptive thresholding)
+  saveflag: True # save flag for trained model
+  cwd: './../../../../' # additional path for adjusting os.cwd and hydra.cwd
+  traindfn: 'path_to_train_feature' # file name of train feature
+  trainlfn: 'path_to_train_label' # file name of train label
+  testdfn: 'path_to_test_feature' # file name of test feature
+  testlfn: 'path_to_test_label' # file name of test label
+  resname: 'path_to_result'
+
+params:
+  nbatch: 64 # batch size
+  slen: 500 # sequence length (# frames)
+  fdim: 64 # feature dimension
+  nevent: 25 # number of sound event classes
+  nscene: 4 # number of acoustic scene classes
+  nfilter1: 128 # number of filters in CNN layers
+  nfilter2: 256 # number of filters in CNN layers
+  stride: 1 # stride size of CNN filter
+  nGRUlayer: 1 # number of GRU layers
+  gruunit: 64 # number of hidden units in GRU layers
+  fcunit1: 32 # number of hidden units in linear units
+  fcunit2: 32 # number of hidden units in linear units
+  alpha: 1.0 # weight for event loss
+  beta: 1.0 # weight for scene loss
+
+hydra:
+  run:
+    dir: ./result/${setting.resname}/config/${now:%Y-%m-%d-%H-%M-%S}
