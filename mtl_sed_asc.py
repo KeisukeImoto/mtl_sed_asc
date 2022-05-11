@@ -14,7 +14,7 @@ from sed_util import evaluator
 
 # define network structure
 class MultitaskNet(nn.Module):
-    def __init__(self, params, device='duda:0'):
+    def __init__(self, params, device='cuda:0'):
         super(MultitaskNet, self).__init__()
         self.params = params
         self.device = device
