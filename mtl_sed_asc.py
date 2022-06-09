@@ -38,6 +38,7 @@ class MultitaskNet(nn.Module):
 
     def forward(self,x0):
 
+        x0 = x0.permute(0,2,1)
         x1 = torch.reshape(x0,(-1,1,self.params['fdim'],self.params['slen']))
         batchsize = x1.size(0)
 
